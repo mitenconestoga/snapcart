@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login</title>
+  <title>Sign UP</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>.dark {
     background-color: black !important;
@@ -100,9 +100,6 @@
           </section>
         </div>
       </div>
-      <!--Grid row-->
-
-
     </div>
   </main>
 

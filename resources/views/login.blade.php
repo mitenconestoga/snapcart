@@ -6,16 +6,27 @@
       <div class="row d-flex justify-content-center">
         <div class="col-md-6">
           <section class="mt-4 mb-5">
-            <form class="justify-content-center"action="#!">
+          {!!Toastr::message()!!}
+            <form class="justify-content-center"action="{{url('/')}}/login" method="post">
+              @csrf
              <div class="md-form md-outline mt-0">
-                <input type="email" id="defaultForm-email2" class="form-control">
+                <input type="email" name="email" id="defaultForm-email2" class="form-control">
                 <label data-error="wrong" data-success="right" for="defaultForm-email2">Your email</label>
+                <span class="text-danger">
+                      @error('email')
+                          {{$message}}
+                      @enderror
+                    </span>
               </div>
               <div class="md-form md-outline mt-0">
-                <input type="password" id="defaultForm-pass2" class="form-control">
+                <input type="password" name="password" id="defaultForm-pass2" class="form-control">
                 <label data-error="wrong" data-success="right" for="defaultForm-pass2">Your password</label>
-                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                </small>
+                <span class="text-danger">
+                      @error('password')
+                          {{$message}}
+                      @enderror
+                    </span>
+
               </div>
 
               <div class="text-center mb-2">

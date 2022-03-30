@@ -46,6 +46,7 @@ class PhotosController extends Controller
     function photodetail($photo_id)
     {
 
+        session()->put('photo_id', $photo_id);
         $photos= Photos::find($photo_id);
         return view('photodetail',['item'=>$photos]);
     }

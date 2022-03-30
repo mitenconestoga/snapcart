@@ -39,7 +39,6 @@ class AddtocartController extends Controller
             }
             else
             {
-              //session()->flash('already', 'Task was successful!');
               Toastr::error("Already added in cart");
 
               return redirect('/');

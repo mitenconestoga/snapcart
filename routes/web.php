@@ -5,6 +5,8 @@ use App\Http\Controllers\signUp;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddtocartController;
+use App\Http\Controllers\PaymentController;
+
 
 Route::get('/signup', function () {
     if(Session::has('user'))
@@ -24,6 +26,8 @@ Route::get('/logout', function () {
     session()->put('cartcount',0);
     return view('login');
 });
+Route::get('payment',[PaymentController::class,'payment']);
+
 Route::get('/cart',[AddtocartController::class,'getcartlist']);
 Route::get('cart/{id}',[AddtocartController::class,'addcart']);
 Route::get('cartremove/{id}',[AddtocartController::class,'removecart']);

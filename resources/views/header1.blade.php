@@ -25,7 +25,21 @@
    .nav-link{
      display: inline !important;
    }
-
+   .panel-title {
+         display: inline;
+         font-weight: bold;
+         }
+         .display-table {
+         display: table;
+         }
+         .display-tr {
+         display: table-row;
+         }
+         .display-td {
+         display: table-cell;
+         vertical-align: middle;
+         width: 61%;
+         }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -44,7 +58,7 @@
         <div class="collapse navbar-collapse" id="basicExampleNav">
           <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-        <a class="nav-link" href="cart">
+        <a class="nav-link" href="{{url('cart')}}">
           <i class="fa fa fa-shopping-cart text-dark" aria-hidden="true">
           @if (Session::get('cartcount')>0)
           <span class="badge badge-warning">
@@ -55,18 +69,7 @@
           </i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="cart">
-          <i class="fa fa fa-heart text-dark" aria-hidden="true">
-          @if (Session::get('cartcount')>0)
-          <span class="badge badge-warning">
-            {{session('cartcount')}}
-            </span>
-            @else
-            @endif
-          </i>
-        </a>
-      </li>
+
             <li class="nav-item">
               <a href="{{url('/')}}" type="button" class="nav-link h-100 text-center text-dark">
                 Home

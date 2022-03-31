@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddtocartController;
 use App\Http\Controllers\PaymentController;
 
+use App\Http\Controllers\StripeController;
 
 Route::get('/signup', function () {
     if(Session::has('user'))
@@ -26,7 +27,7 @@ Route::get('/logout', function () {
     session()->put('cartcount',0);
     return view('login');
 });
-Route::get('payment',[PaymentController::class,'payment']);
+Route::get('payment/{id}',[PaymentController::class,'payment']);
 
 Route::get('/cart',[AddtocartController::class,'getcartlist']);
 Route::get('cart/{id}',[AddtocartController::class,'addcart']);
@@ -36,6 +37,6 @@ Route::get('/{id?}',[PhotosController::class,'getphoto']);
 Route::get('photodetail/{photo_id}',[PhotosController::class,'photodetail']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/signup',[UserController::class,'signup']);
-
+Route::post('payment', [StripeController::class, 'stripe']);
 
 ?>

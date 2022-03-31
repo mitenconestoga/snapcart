@@ -16,6 +16,7 @@ class PhotosController extends Controller
             if(session()->has('uid'))
             {
             $id= base64_decode($id);
+            session()->put('photoid',$id);
             $photo= Photos::select('photos.*','addtocarts.u_id as uid')
             ->leftJoin('addtocarts', 'photos.photo_id', '=', 'addtocarts.photo_id')
             ->where('photos.category_id','=',$id)

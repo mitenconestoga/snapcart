@@ -60,13 +60,13 @@
 
                         <div class='form-row'>
                             <div class='col-md-12 hide error form-group'>
-                                <div class='alert-warning alert'>Fix the errors before you begin.</div>
+                                <div class='alert-danger alert'>Fix the errors before you begin.</div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-warning btn-lg btn-block" type="submit">Pay Now (₹100)</button>
+                                <button class="btn btn-warning btn-lg btn-block" type="submit">Pay Now ${{session()->get('price')}}</button>
                             </div>
                         </div>
 

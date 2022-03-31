@@ -8,7 +8,7 @@ class PaymentController extends Controller
 {
     public function payment($id){
 
-       return urldecode($id);
-        return view('paymentform');
+            session()->put('price',$id);
+            return view('paymentform');
     }
 }

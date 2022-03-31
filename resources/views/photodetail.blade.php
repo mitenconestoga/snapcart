@@ -1,11 +1,8 @@
 @if (session()->has('user'))
 @include('header1')
-
 @else
 @include('header')
-
 @endif
-
 <form>
 <div class="container mt-5 mb-5">
     <div class="row d-flex justify-content-center">
@@ -14,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="@php echo base64_encode({{url('storage/'.$item['filepath'])}}); @endphp" width="250" /> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="{{url('storage/'.$item['filepath'])}}" width="250" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">

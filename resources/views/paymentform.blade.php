@@ -18,7 +18,6 @@
                             <p>{{ Session::get('success') }}</p>
                         </div>
                     @endif
-
                     <form role="form" action="{{ url('payment') }}" method="post" class="validation"
                                                      data-cc-on-file="false"
                                                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"

@@ -77,7 +77,7 @@
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong><strong>${{$count}}</strong><li>
                 <h5 class="font-weight-bold"></h5>
               </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+            </ul><a href="{{url('payment')}}/{{$count}}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
   </div>
 @else
 
-<div class="container-fluid mt-100">
+<div class="container mt-100">
     <div class="row">
         <div class="col-md-12">
             <div class="card">

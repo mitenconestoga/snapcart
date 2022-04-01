@@ -9,7 +9,7 @@ use App\Http\Controllers\PaymentController;
 
 use App\Http\Controllers\StripeController;
 
-Route::get('/signup', function () {
+Route::get('/sign-up', function () {
     if(Session::has('user'))
     return redirect('/');
     else

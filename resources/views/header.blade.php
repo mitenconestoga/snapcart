@@ -11,8 +11,18 @@
    bottom:0;
    width:100%;
   }
+
    .navbar{
            line-height: 0 !important;
+           background-color: white !important;
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+
+   }
+   footer{
+    background-color: white !important;
+    box-shadow: 0 3px 30px rgb(0 0 0 / 0.5);
+
    }
    .bi{
       text-align: center;

@@ -4,6 +4,8 @@
 
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -25,21 +27,24 @@
    .nav-link{
      display: inline !important;
    }
-   .panel-title {
-         display: inline;
-         font-weight: bold;
-         }
-         .display-table {
-         display: table;
-         }
-         .display-tr {
-         display: table-row;
-         }
-         .display-td {
-         display: table-cell;
-         vertical-align: middle;
-         width: 61%;
-         }
+   .container {
+            margin-top: 40px;
+        }
+        .panel-heading {
+        display: inline;
+        font-weight: bold;
+        }
+        .flex-table {
+            display: table;
+        }
+        .display-tr {
+            display: table-row;
+        }
+        .display-td {
+            display: table-cell;
+            vertical-align: middle;
+            width: 55%;
+        }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">

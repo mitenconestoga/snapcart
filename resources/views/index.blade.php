@@ -23,7 +23,7 @@
           <div class="card mb-50">
             <a href="photodetail/{{$item['photo_id']}}">
 
-            <img src="{{url('storage/'.$item['filepath'])}}" class="card-img-top" height="250px" alt="...">
+            <img src="{{url('storage/'.$item['filepath'])}}" class="card-img-top w-100" height="250px" alt="...">
           </a>
             <div class="card-body text-center">
               <h5 class="card-title">{{$item['title']}}</h5>

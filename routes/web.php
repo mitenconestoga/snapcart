@@ -27,7 +27,7 @@ Route::get('/logout', function () {
     session()->put('cartcount',0);
     return view('login');
 });
-Route::get('payment/{id}',[PaymentController::class,'payment']);
+Route::get('payment',[PaymentController::class,'payment']);
 
 Route::get('/cart',[AddtocartController::class,'getcartlist']);
 Route::get('cart/{id}',[AddtocartController::class,'addcart']);

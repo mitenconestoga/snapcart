@@ -3,8 +3,6 @@
 @else
 @include('header')
 @endif
-
-
             {!!Toastr::message()!!}
 
 <div class="container">
@@ -19,6 +17,7 @@
 </div>
 </div>
       <div class="row">
+
         @foreach ($collection as $item)
         <div class="col-4 mt-5">
           <div class="card mb-50">
@@ -27,7 +26,7 @@
             <img src="{{url('storage/'.$item['filepath'])}}" class="card-img-top" height="250px" alt="...">
           </a>
             <div class="card-body text-center">
-              <!-- <h5 class="card-title">{{$item['']}}</h5> -->
+              <h5 class="card-title">{{$item['title']}}</h5>
               <h4 class="card-text text-dark">${{$item['price']}}</h4>
               @if (session()->has('uid'))
               @if ($item['uid']==session()->get('uid'))

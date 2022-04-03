@@ -25,6 +25,8 @@ class StripeController extends Controller
                 "description" => "Test payment from snapcart.com."
         ]);
 
+        if(session()->get('list'))
+        return session()->get('list');
         $payment=new payment;
         $value = session()->get('uid');
         $photo_id=session()->get('photo_id');

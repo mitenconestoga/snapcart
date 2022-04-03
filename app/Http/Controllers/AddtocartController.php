@@ -53,7 +53,7 @@ class AddtocartController extends Controller
               		->join('photos', 'photos.photo_id', '=', 'addtocarts.photo_id')
                       ->join('photo_category', 'photo_category.category_id', '=', 'photos.category_id')
                       ->where('users.u_id', $value)
-              		->get(['addtocarts.photo_id','addtocarts.addtocart_id','photos.filepath','photos.price','photos.title', 'photo_category.category_name']);
+              		->get(['users.u_id','addtocarts.photo_id','addtocarts.addtocart_id','photos.filepath','photos.price','photos.title', 'photo_category.category_name']);
 
                         session()->put('cartcount',count($data));
                     //return $data;

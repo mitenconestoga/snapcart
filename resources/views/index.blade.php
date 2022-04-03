@@ -27,7 +27,7 @@
           </a>
             <div class="card-body text-center">
               <h5 class="card-title">{{$item['title']}}</h5>
-              <h4 class="card-text text-dark">${{$item['price']}}</h4>
+              <p class="card-text text-dark font-weight-bold">${{$item['price']}}</p>
               @if (session()->has('uid'))
               @if ($item['uid']==session()->get('uid'))
               <a href="cart/{{$item['photo_id']}}"><button type="button" class="btn btn-outline-warning">Added</button></a>

@@ -9,12 +9,16 @@ use App\Http\Controllers\PaymentController;
 
 use App\Http\Controllers\StripeController;
 
+
 Route::get('/sign-up', function () {
     if(Session::has('user'))
     return redirect('/');
     else
     return view('sign-up');
 });
+Route::get('home', function () {
+    return redirect('home');
+ });
 Route::get('/login', function () {
     if(Session::has('user'))
    return redirect('/');
@@ -27,6 +31,7 @@ Route::get('/logout', function () {
     session()->put('cartcount',0);
     return view('login');
 });
+
 Route::get('payment',[PaymentController::class,'payment']);
 
 Route::get('/cart',[AddtocartController::class,'getcartlist']);

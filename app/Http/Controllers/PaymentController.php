@@ -13,8 +13,12 @@ class PaymentController extends Controller
            {
             return view('paymentform');
            }
-           else{
+           else
+           {
+            session()->forget('list');
             return view('paymentform');
            }
-    }
+
+
+}
 }

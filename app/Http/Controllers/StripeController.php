@@ -13,10 +13,10 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class StripeController extends Controller
 {
-    //
 
     public function stripe(Request $request)
     {
+
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
                 "amount" => session()->get('price') * 100,
@@ -26,23 +26,47 @@ class StripeController extends Controller
         ]);
 
         if(session()->get('list'))
-        return session()->get('list');
+        {
+          foreach(session()->get('list') as $photo){
         $payment=new payment;
-        $value = session()->get('uid');
-        $photo_id=session()->get('photo_id');
+        $value = $photo['u_id'];
+        $photo_id=$photo['photo_id'];
               $payment->u_id=$value;
               $payment->photo_id=$photo_id;
               $payment->stripe_token=$request->stripeToken;
-              $payment->totalprice=session()->get('price');
+              $payment->totalprice=$photo['price'];
               $payment->save();
-              Toastr::success("Payment successful!");
                 $data=addtocart::where('photo_id','=',$photo_id)
                                 ->where('u_id','=',$value)->delete();
                $photo=Photos::find($photo_id);
                 $photo->delete();
+
+          }
               //return redirect('/');
              // Session::flash('success', 'Payment successful!');
-
+             Toastr::success("Payment successful!");
+             session()->forget('list');
         return redirect('/');
+
+        }
+        else{
+          $payment=new payment;
+          $value = session()->get('uid');
+          $photo_id=session()->get('photo_id');
+                $payment->u_id=$value;
+                $payment->photo_id=$photo_id;
+                $payment->stripe_token=$request->stripeToken;
+                $payment->totalprice=session()->get('price');
+                $payment->save();
+                Toastr::success("Payment successful!");
+                  $data=addtocart::where('photo_id','=',$photo_id)
+                                  ->where('u_id','=',$value)->delete();
+                 $photo=Photos::find($photo_id);
+                  $photo->delete();
+                //return redirect('/');
+               // Session::flash('success', 'Payment successful!');
+
+          return redirect('/');
+        }
     }
 }

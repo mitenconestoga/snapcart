@@ -11,15 +11,35 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-  <style>.dark {
+  <style>
+  .dark {
+    background-color: black !important;
+    position:absolute;
+   bottom:0;
+   width:100%;
+  }
+
+   .navbar{
+           line-height: 0 !important;
+           background-color: white !important;
+
+          box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+
+   }
+   footer{
+    background-color: white !important;
+    box-shadow: 0 3px 30px rgb(0 0 0 / 0.5);
+
+   }
+   .bi{
+      text-align: center;
+      font-size: 26px;
+      }.dark {
     background-color: black !important;
     position:absolute;
    bottom:0;
    width:100%;
 }
-.navbar{
-           line-height: 0 !important;
-   }
    .fa
    {
      font-size:1.4em !important;

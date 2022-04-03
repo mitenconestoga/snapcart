@@ -20,13 +20,14 @@
                                 <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left text-dark"></i> <span class="ml-1 text-dark">Back</span> </div>
 </a>
                             <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"></span>
-                                <h5 class="text-uppercase">Galaxy</h5>
+                                <h5 class="text-uppercase">{{$item['title']}}</h5>
                                 <div class="price d-flex flex-row align-items-center"> <span class="act-price b">${{$item['price']}}</span>
                                     <div class="ml-2"> <small class="dis-price"></small> <span></span> </div>
                                 </div>
                             </div>
                             <p class="about">{{$item['description']}}</p>
-                            <div class="cart mt-4 align-items-center"> <a class="btn btn-danger text-uppercase mr-2 px-4"href="{{url('cart')}}/{{$item['photo_id']}}">Add to cart</a><a  class="btn btn-warning text-uppercase mr-2 px-4" href="{{url('payment')}}/{{$item['price']}}"> Buy Now</a> </div>
+                            {{session()->put('price',$item['price'])}}
+                            <div class="cart mt-4 align-items-center"> <a class="btn btn-danger text-uppercase mr-2 px-4"href="{{url('cart')}}/{{$item['photo_id']}}">Add to cart</a><a  class="btn btn-warning text-uppercase mr-2 px-4" href="{{url('payment')}}"> Buy Now</a> </div>
                         </div>
                     </div>
                 </div>

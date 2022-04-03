@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PaymentController extends Controller
 {
-    public function payment($id){
+    public function payment(){
 
-            session()->put('price',$id);
+           if (Str::contains(url()->previous(), 'cart'))
+           {
             return view('paymentform');
+           }
+           else{
+            return view('paymentform');
+           }
     }
 }

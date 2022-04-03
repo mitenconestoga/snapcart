@@ -7,37 +7,48 @@ use App\Models\Photos;
 
 class PhotosController extends Controller
 {
-
     function getPhoto($id=null)
     {
-
         if(!empty($id))
         {
             if(session()->has('uid'))
             {
+
             $id= base64_decode($id);
             session()->put('photoid',$id);
             $photo= Photos::select('photos.*','addtocarts.u_id as uid')
             ->leftJoin('addtocarts', 'photos.photo_id', '=', 'addtocarts.photo_id')
             ->where('photos.category_id','=',$id)
             ->get();
+
             }
             else
             {
                 $id= base64_decode($id);
                   $photo=Photos::where('category_id','=',$id)->get();
+
             }
         }
         else
         {
+
             if(session()->has('uid'))
             {
         $photo= Photos::select('photos.*','addtocarts.u_id as uid')
         ->leftJoin('addtocarts', 'photos.photo_id', '=', 'addtocarts.photo_id')
         ->get();
+                    $count=0;
+        foreach($photo as $data){
+            if($data['uid']==session()->get('uid'))
+             $count=$count+1;
+                }
+                session()->put('cartcount',$count);
+
             }
             else{
+
                 $photo= Photos::all();
+
 
             }
         }

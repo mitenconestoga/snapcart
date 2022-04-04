@@ -55,6 +55,13 @@ class PhotosController extends Controller
         return view('index',['collection'=>$photo]);
 
     }
+
+    function gethomephotos()
+    {
+        $photo= Photos::orderBy('photo_id', 'DESC')->limit(6)->get();
+        return view('home',['collection'=>$photo]);
+
+    }
     function photodetail($photo_id)
     {
 

@@ -5,6 +5,7 @@
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -46,6 +47,7 @@
    }
    .nav-link{
      display: inline !important;
+     font-weight: bold;
    }
    .container {
             margin-top: 40px;
@@ -74,7 +76,7 @@
 <nav class="navbar navbar-expand-md text-dark scrolling-navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <i class="fab fa-snapcart fa-3x" alt="snapcarts logo"><img src="{{ asset('storage/logo.png') }}"></i>
+          <i class="fab fa-snapcart fa-3x" alt="snapcarts logo"><img src="{{ asset('storage/logo.png') }}" alt="photos img"></i>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
           aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,6 +102,11 @@
                 Home
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{{url('/photos')}}" type="button" class="nav-link h-100 text-center text-dark">
+                Photos
+              </a>
+            </li>
             <li class="nav-item text-center">
               <a href="#!" type="button" class="nav-link text-dark btn-md">
                 Contact
@@ -111,6 +118,7 @@
                 Logout
               </a>
             </li>
+
           </ul>
 
         </div>

@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <style>.dark {
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+.bgimg-1
+{
+  background-image:url("{{ asset('storage/banner-2.jpg') }}");
+  background-position: center;
+  background-size: cover;
+
+}
+  .dark {
     background-color: black !important;
     position:absolute;
    bottom:0;
@@ -24,6 +33,9 @@
     box-shadow: 0 3px 30px rgb(0 0 0 / 0.5);
 
    }
+   .nav-link{
+     font-weight: bold;
+   }
    .bi{
       text-align: center;
       font-size: 26px;
@@ -38,10 +50,10 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
-<nav class="navbar navbar-expand-md text-dark scrolling-navbar">
+<nav class="navbar scrolling navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="{{url('/')}}">
-          <i class="fab fa-snapcart fa-3x" alt="snapcarts logo"><img src="{{ asset('storage/logo.png') }}"></i>
+          <i class="fab fa-snapcart fa-3x" alt="snapcarts logo"><img src="{{ asset('storage/logo.png') }}" alt="photos img"></i>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
           aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,8 +67,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#!" class="nav-link text-dark">
-                Contact
+              <a href="{{url('/photos')}}" class="nav-link text-dark">
+                Photos
               </a>
             </li>
             <li class="nav-item">
@@ -70,9 +82,15 @@
                 class="nav-link text-dark">Sign
                 up</a>
             </li>
+            <li class="nav-item">
+              <a href="#!" class="nav-link text-dark">
+                Contact
+              </a>
+            </li>
           </ul>
 
         </div>
       </div>
     </nav>
+
 <body>

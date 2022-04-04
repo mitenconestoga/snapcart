@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="{{url('storage/'.$item['filepath'])}}" width="250" /> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="{{url('storage/'.$item['filepath'])}}" width="250" alt="photos img" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">

@@ -16,9 +16,9 @@ Route::get('/sign-up', function () {
     else
     return view('sign-up');
 });
-Route::get('home', function () {
-    return redirect('home');
- });
+// Route::get('home', function () {
+//     return view('home');
+//  });
 Route::get('/login', function () {
     if(Session::has('user'))
    return redirect('/');
@@ -38,7 +38,9 @@ Route::get('/cart',[AddtocartController::class,'getcartlist']);
 Route::get('cart/{id}',[AddtocartController::class,'addcart']);
 Route::get('cartremove/{id}',[AddtocartController::class,'removecart']);
 
-Route::get('/{id?}',[PhotosController::class,'getphoto']);
+Route::get('/photos/{id?}',[PhotosController::class,'getphoto']);
+Route::get('/{id?}',[PhotosController::class,'gethomephotos']);
+
 Route::get('photodetail/{photo_id}',[PhotosController::class,'photodetail']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/signup',[UserController::class,'signup']);

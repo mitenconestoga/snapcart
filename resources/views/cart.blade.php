@@ -36,7 +36,7 @@
                 <tr>
                   <th scope="row" class="border-0">
                     <div class="p-2">
-                      <img src="{{url('storage/'.$item['filepath'])}}" alt="" width="70" height="70" class="img">
+                      <img src="{{url('storage/'.$item['filepath'])}}" alt="photos img" width="70" height="70" class="img">
                       <div class="ml-3 d-inline-block align-middle">
                         <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{$item['title']}}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: {{$item['category_name']}}</span>
                       </div>
@@ -99,7 +99,7 @@
                     <h5>Cart</h5>
                 </div>
                 <div class="card-body cart">
-                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="{{ asset('storage/shopping-cart.png') }}" width="130" height="130" class="img-fluid mb-4 mr-3">
+                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="{{ asset('storage/shopping-cart.png') }}" width="130" alt="photos img" height="130" class="img-fluid mb-4 mr-3">
                         <h3><strong>Your Cart is Empty</strong></h3>
                         <h4>Add something to make me happy :)</h4> <a href="/" class="btn btn-warning cart-btn-transform m-3" data-abc="true">continue shopping</a>
                     </div>

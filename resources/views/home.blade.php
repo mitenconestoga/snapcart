@@ -3,75 +3,50 @@
 @else
 @include('header')
 @endif
-<div class="container" id="about">
-  <h3 class="w3-center text-uppercase">Latest photos</h3>
-  <div class="w3-row">
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/pic-1.jpg') }}" alt="Best selling pic-1" style="width:100%">
-        </a>
-        <h3>Best selling pic-1</h3>
-        <p>This bar graph gives you the information of IPL winning data. You can sort them by winning ratio.</p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/nature6.jpg') }}" alt="Best selling pic-2" style="width:100%">
-        </a>
-        <h3>Best selling pic-2</h3>
-        <p>This line graph gives you the information of Netflix subscribers from 2001 to now onwards.</p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/nature7.jpg') }}" alt="Best selling pic-3" style="width:100%">
-        </a>
-        <h3>Best selling pic-3</h3>
-        <p>This pie graph gives you the information of IPL wins and losses information of particular teams.</p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/nature8.jpg') }}" alt="Best selling pic-4" style="width:100%;">
-        </a>
-        <h3>Best selling pic-4</h3>
-        <p>This world map gives you the information of capital of each countries with zoom-in zoom-out effect.</p>
-      </div>
-    </div>
-  </div>
-  <h3 class="w3-center text-uppercase">Best Photographer</h3><br>
-  <div class="w3-row">
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <!-- <img src="/data/dp.png" alt="John" style="width:100%"> -->
-        <a href="#">
-          <img src="{{ asset('storage/pic-1.jpg') }}" alt="Best photographer-1" style="width:100%">
-        </a>
-        <h3>Best photographer-1</h3>
-        <p>This bar graph gives you the information of IPL winning data. You can sort them by winning ratio.</p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/nature6.jpg') }}" alt="Best photographer-2" style="width:100%">
-        </a>
-        <h3>Best photographer-2</h3>
-        <p>This line graph gives you the information of Netflix subscribers from 2001 to now onwards.</p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/nature7.jpg') }}" alt="Best photographer-3" style="width:100%">
-        </a>
-        <h3>Best photographer-3</h3>
-        <p>This pie graph gives you the information of IPL wins and losses information of particular teams.</p>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <a href="#">
-          <img src="{{ asset('storage/nature8.jpg') }}" alt="Best photographer-4" style="width:100%;">
-        </a>
-        <h3>Best photographer-4</h3>
-        <p>This world map gives you the information of capital of each countries with zoom-in zoom-out effect.</p>
-      </div>
-    </div>
-  </div>
 
+<div class="bgimg-1 w3-display-container mb-5" id="home" style="height: 500px;">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">SNAPCART</span>
+  </div>
+</div>
+<div class="container" id="about">
+<h3 class="text-center mt-5 mb-2 text-uppercase">Recently Added photos</h3>
+
+<div class="row">
+
+  @foreach ($collection as $item)
+        <div class="col-12 col-md-4 mt-5">
+          <div class="card mb-50">
+            <a href="photodetail/{{$item['photo_id']}}">
+
+            <img src="{{url('storage/'.$item['filepath'])}}" class="card-img-top w-100" height="250px" alt="photos img">
+          </a>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{$item['title']}}</h5>
+              <p class="card-text text-dark font-weight-bold">${{$item['price']}}</p>
+              @if (session()->has('uid'))
+              @if ($item['uid']==session()->get('uid'))
+              <a href="cart/{{$item['photo_id']}}"><button type="button" class="btn btn-outline-warning">Added</button></a>
+              @else
+              <a href="cart/{{$item['photo_id']}}"><button type="button" class="btn btn-outline-warning">Add to cart</button></a>
+
+              @endif
+              @else
+              <a href="cart/{{$item['photo_id']}}">
+              <button type="button" class="btn btn-outline-warning">Add to cart</button>
+</a>
+
+
+              @endif
+
+
+
+            </div>
+          </div>
+        </div>
+        @endforeach
+
+</div>
 </div>
 
 @include('footer')

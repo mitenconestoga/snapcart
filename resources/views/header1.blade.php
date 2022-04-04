@@ -11,6 +11,13 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="title" content="snapcart">
+<meta name="description" content="This site is used to buy a photos from photographers.">
+<meta name="keywords" content="photos.photographers,snapcart,buy photos">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
 
   <style>
   .dark {
@@ -19,6 +26,13 @@
    bottom:0;
    width:100%;
   }
+  .bgimg-1
+{
+  background-image:url("{{ asset('storage/banner-2.jpg') }}");
+  background-position: center;
+  background-size: cover;
+
+}
 
    .navbar{
            line-height: 0 !important;

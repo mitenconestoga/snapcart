@@ -5,6 +5,12 @@
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta name="title" content="snapcart">
+<meta name="description" content="This site is used to buy a photos from photographers.">
+<meta name="keywords" content="photos.photographers,snapcart,buy photos">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
 
   <style>
 .bgimg-1

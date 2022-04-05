@@ -1,13 +1,4 @@
 @include('header1')
-<<<<<<< HEAD
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
-<div class="padding">
-    <div class="row m-auto">
-        <div class="container-fluid d-flex justify-content-center">
-            <div class="col-sm-8 col-md-6">
-                <div class="card">
-                    <div class="card-header">
-=======
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6 col-md-offset-3">
@@ -72,7 +63,6 @@
                             </div>
                         </div>
 
->>>>>>> 2df345a8a4dfbc584f69046f1ae88411c9c244ca
                         <div class="row">
                             <div class="col-md-6"> <span>CREDIT/DEBIT CARD PAYMENT</span> </div>
                             <div class="col-md-6 text-right" style="margin-top: -5px;"> <img src="https://img.icons8.com/color/36/000000/visa.png"> <img src="https://img.icons8.com/color/36/000000/mastercard.png"> <img src="https://img.icons8.com/color/36/000000/amex.png"> </div>

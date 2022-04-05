@@ -1,4 +1,4 @@
-@include('header');
+@include('header')
 <main>
     <div class="container">
       <h3 class="text-center mt-10">Sign Up</h3>

@@ -29,9 +29,10 @@
 
               </div>
 
-              <div class="text-center mb-2">
+              <div class="text-center">
 
-              <button type="submit" class="btn btn-warning mb-4">Login</button>
+<button type="submit" class="btn btn-warning p-20 mb-6  mr-2">Login</button><br><br><a href="{{url('/')}}/sign-up" class="text-dark">New User ?</a>
+
             </form>
 
           </section>

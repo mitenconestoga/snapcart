@@ -9,16 +9,16 @@ use App\Http\Controllers\PaymentController;
 
 
 Route::get('/signup', function () {
-    if(Session::has('user'))
-    return redirect('/');
-    else
-    return view('sign-up');
+    // if(Session::has('user'))
+    // return redirect('/');
+    // else
+    // return view('sign-up');
 });
 Route::get('/login', function () {
-    if(Session::has('user'))
-   return redirect('/');
-    else
-    return view('login');
+//     if(Session::has('user'))
+//    return redirect('/');
+//     else
+//     return view('login');
 });
 Route::get('/logout', function () {
     session()->forget('user');

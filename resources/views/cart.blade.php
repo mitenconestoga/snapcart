@@ -23,18 +23,22 @@
               </thead>
               <tbody>
                 @php
-                  $count=0;
+                  $count=0
                 @endphp
+
+                {{session()->put('list',$collection)}}
                 @foreach ($collection as $item)
                 @php
                 $count+=$item['price']
                 @endphp
+                {{session()->put('price',$count)}}
+
                 <tr>
                   <th scope="row" class="border-0">
                     <div class="p-2">
-                      <img src="{{url('storage/'.$item['filepath'])}}" alt="" width="70" height="70" class="img">
+                      <img src="{{url('storage/'.$item['filepath'])}}" alt="photos img" width="70" height="70" class="img">
                       <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: {{$item['category_name']}}</span>
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{$item['title']}}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: {{$item['category_name']}}</span>
                       </div>
                     </div>
                   </th>
@@ -77,7 +81,8 @@
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong><strong>${{$count}}</strong><li>
                 <h5 class="font-weight-bold"></h5>
               </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+            </ul><a href="{{url('payment')}}" class="btn btn-dark rounded-pill py-2 btn-block">
+            Processed to checkout</a>
           </div>
         </div>
       </div>
@@ -86,7 +91,7 @@
   </div>
 @else
 
-<div class="container-fluid mt-100">
+<div class="container mt-100">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -94,7 +99,7 @@
                     <h5>Cart</h5>
                 </div>
                 <div class="card-body cart">
-                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="{{ asset('storage/shopping-cart.png') }}" width="130" height="130" class="img-fluid mb-4 mr-3">
+                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="{{ asset('storage/shopping-cart.png') }}" width="130" alt="photos img" height="130" class="img-fluid mb-4 mr-3">
                         <h3><strong>Your Cart is Empty</strong></h3>
                         <h4>Add something to make me happy :)</h4> <a href="/" class="btn btn-warning cart-btn-transform m-3" data-abc="true">continue shopping</a>
                     </div>

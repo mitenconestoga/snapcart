@@ -1,24 +1,20 @@
 @if (session()->has('user'))
-  @include('header1')
+@include('header1')
 @else
 @include('header')
 @endif
-            {!!Toastr::message()!!}
 
-<div class="container">
-  <div class="text-center">
-    <div class="row  mt-5">
-      <div class="col-md"><a href="/"><button type="button" name="all"href="index" class="btn btn-warning btn-lg w-100">All</button></a></div>
-      <div class="col-md"><a href="@php echo base64_encode(1);@endphp"><button type="button" class="btn btn-warning btn-lg w-100">Space</button></a></div>
-      <div class="col-md"><a href="@php echo base64_encode(2);@endphp"><button type="button" class="btn btn-warning btn-lg w-100">Birds</button></a></div>
-      <div class="col-md"><a href="@php echo base64_encode(3); @endphp"><button type="button" class="btn btn-warning btn-lg w-100">Nature</button></a></div>
-      <div class="col-md"><a href="@php  echo base64_encode(4); @endphp"><button type="button" class="btn btn-warning btn-lg w-100">God</button></a></div>
-
+<div class="bgimg-1 w3-display-container mb-5" id="home" style="height: 500px;">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">SNAPCART</span>
+  </div>
 </div>
-</div>
-      <div class="row">
+<div class="container" id="about">
+<h3 class="text-center mt-5 mb-2 text-uppercase">Recently Added photos</h3>
 
-        @foreach ($collection as $item)
+<div class="row">
+
+  @foreach ($collection as $item)
         <div class="col-12 col-md-4 mt-5">
           <div class="card mb-50">
             <a href="photodetail/{{$item['photo_id']}}">
@@ -49,9 +45,8 @@
           </div>
         </div>
         @endforeach
-      </div>
 
+</div>
+</div>
 
-    </div>
-  @include('footer')
-
+@include('footer')

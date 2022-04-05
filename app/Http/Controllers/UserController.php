@@ -50,7 +50,7 @@ class UserController extends Controller
                 $request->session()->put('user',$request->email);
                 $request->session()->put('uid',$dataa[0]['u_id']);
 
-                 return redirect('/');
+                 return redirect('photos');
             }
             else{
                 Toastr::error("Email and Password is not matching");
